@@ -10,21 +10,23 @@ https://wokwi.com/projects/480136526006967297
 
 
 
-How to Run:
+What it Does:
 
 Hard-coded vector as a linear combination. The system makes a check between the scalar product and an expected reference value "Y\_EXPECTED=5". If the result is really 5 the test is passed and a green LED flashes slowly, if it has failed a red LED lights up and flashes quickly.
 
 
 
-Tested on:
+Environment:
 
-Windows11, Google Chrome
+Windows 11, Google Chrome, Wokwi web (online build).
 
+Versions printed by the firmware at startup (see `logs/`):
 
+Arduino-ESP32 3.3.12, ESP-IDF v5.5.5, C++20 (`\_\_cplusplus` = 202002)
 
 
 
 Notes:
 
-Basic project carried out through AI tutorials. I followed the creation of the code step by step and I customized the behavior: based on the request to work with fixed input I had an idea produced and then I implemented it. I also took the opportunity to use Git.
+Basic project built as a guided exercise with an AI assistant. I followed the code step by step and customized the behaviour (two LEDs, output format). I also used it to learn the Git workflow.
 
