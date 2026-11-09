@@ -7,7 +7,7 @@ const int X[N] = {3, -1, 4, 2};        // fixed input vector
 const int W[N] = {2, 5, -1, 3};        // weights
 const int B = 2;                       // bias
 
-const int Y_EXPECTED = 6;              // Expected for the test
+const int Y_EXPECTED = 5;              // Expected for the test
 const int CLASS_EXPECTED = 1;          // y > 0  ->  class 1
 
 bool testPassed = false;               
@@ -53,6 +53,21 @@ void setup() {
   pinMode(LED_PIN_OK, OUTPUT);
   pinMode(LED_PIN_KO, OUTPUT);
 
+  // Env
+  Serial.println("[env] project=vww-lut-smoke v0.1");
+  Serial.print("[env] arduino-esp32=");
+  Serial.print(ESP_ARDUINO_VERSION_MAJOR);
+  Serial.print(".");
+  Serial.print(ESP_ARDUINO_VERSION_MINOR);
+  Serial.print(".");
+  Serial.println(ESP_ARDUINO_VERSION_PATCH);
+  Serial.print("[env] esp-idf=");
+  Serial.println(ESP.getSdkVersion());
+  Serial.print("[env] chip=");
+  Serial.println(ESP.getChipModel());
+  Serial.print("[env] cplusplus=");
+  Serial.println(__cplusplus);
+
 
   // Smoke test
   Serial.print("[test] x=");
@@ -80,17 +95,17 @@ void setup() {
 }
 
 void loop() {
-  int LED_PIN = LED_PIN_KO;
+  int ledPin = LED_PIN_KO;
   int blinkTime = 150;                 // fast blink, red led = test failed
   if (testPassed) {
-    LED_PIN = LED_PIN_OK;
-    blinkTime = 700;                   // slow blink, yello led = test passed
+    ledPin = LED_PIN_OK;
+    blinkTime = 700;                   // slow blink, green led = test passed
   }
 
   // loop on/off led
-  digitalWrite(LED_PIN, HIGH);         
+  digitalWrite(ledPin, HIGH);         
   delay(blinkTime);
-  digitalWrite(LED_PIN, LOW);          
+  digitalWrite(ledPin, LOW);          
   delay(blinkTime);
   
 }
