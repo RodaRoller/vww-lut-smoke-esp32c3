@@ -7,6 +7,11 @@ load:0x3fcd6100,len:0x420
 load:0x403ce000,len:0x90c
 load:0x403d0000,len:0x2370
 entry 0x403ce000
+[env] project=vww-lut-smoke v0.1
+[env] arduino-esp32=3.3.12
+[env] esp-idf=v5.5.5
+[env] chip=ESP32-C3
+[env] cplusplus=202002
 [test] x=3,-1,4,2
 [test] w=2,5,-1,3
 [test] b=2
